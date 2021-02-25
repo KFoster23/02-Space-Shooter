@@ -11,12 +11,13 @@ func _ready():
 func _physics_process(_delta):
 	pass
 
-func die():
+func die(s):
+	Global.score += s
 	queue_free()
 
 
 func _on_Shoot_timeout():
-	if randf() < 0.2:
+	if randf() < 0.2 and position.y > 0:
 		var enemy_bullet = Enemy_Bullet.instance()
 		enemy_bullet.position = position
 		Bullets.add_child(enemy_bullet)

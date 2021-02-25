@@ -25,7 +25,7 @@ func _physics_process(_delta):
 		Bullets.add_child(bullet1)
 	if Input.is_action_just_pressed("shoot2"):
 		var bullet2 = Bullet2.instance()
-		bullet2.position = position
+		bullet2.position = position + Vector2(0,-30)
 		Bullets.add_child(bullet2)
 
 
