@@ -12,4 +12,16 @@ func _physics_process(_delta):
 
 
 func _on_Timer_timeout():
+	for e in enemies:
+		e.queue_free()
 	queue_free()
+
+
+func _on_Area2D_body_entered(body):
+	enemies.appened(body)
+
+
+func _on_Area2D_body_exited(body):
+	for e in enemies:
+		if body.name == e.name:
+			enemies.erase(e)

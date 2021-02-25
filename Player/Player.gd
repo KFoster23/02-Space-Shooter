@@ -37,5 +37,5 @@ func get_input():
 		input_vector += Vector2(1,0)
 	return input_vector
 	
-func die():
+func die(s):
 	queue_free()
